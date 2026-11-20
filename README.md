@@ -37,8 +37,8 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
 ## 2. Running Automated Tests & Benchmark Evaluation
 
-### MoveInSync 10-Minute Check (Inside Docker)
-Because `tests/` and `eval/` are packaged inside the container, evaluators can run the verification checks with zero host setup:
+### Test Check (Inside Docker)
+Because `tests/` and `eval/` are packaged inside the container, we can evaluate by running the verification checks with zero host setup:
 
 ```bash
 # 1. Run full test suite (18 tests, offline mock LLM fixture guaranteed)
@@ -65,7 +65,7 @@ Outputs:
 
 ## 3. Real LLM Mode
 
-The case study requires a **real LLM** (free Gemini or Groq tier), while keeping tests on a deterministic mock client:
+For a **real LLM** (free Gemini or Groq tier), while keeping tests on a deterministic mock client:
 
 ### Option A: Google Gemini (Free Tier)
 1. Get a free API key at [Google AI Studio](https://aistudio.google.com/).
