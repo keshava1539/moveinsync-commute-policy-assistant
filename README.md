@@ -1,4 +1,4 @@
-# MoveInSync Commute Policy Assistant (Case Study B)
+# MoveInSync Commute Policy Assistant
 
 An enterprise multi-tenant AI policy assistant for employee commute and transport management. Built for strict data isolation, grounded answers with citations, atomic document versioning, sub-second latency SLA, and resilience against adversarial prompt injections.
 
