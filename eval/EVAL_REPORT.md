@@ -67,7 +67,7 @@ $$RRF(d) = \sum_{m \in \{\text{dense}, \text{bm25}\}} \frac{1}{60 + \text{rank}_
 
 ---
 
-## 5. Architectural Trade-offs & Viva Defense Guide
+## 5. Architectural Trade-offs
 
 ### Trade-off 1: Server-Side Metadata Partitioning vs. In-Prompt Tenant Routing
 * **Decision:** We extract `company_id` strictly from the signed JWT server-side and inject it into Chroma's `$and` compound filter and the BM25 tenant corpus.
