@@ -1,0 +1,33 @@
+services:
+  commute-assistant:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: moveinsync-commute-assistant
+    ports:
+      - "8000:8000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - DEBUG=false
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY:-super-secret-key-moveinsync-dev-interview-2026}
+      - AUTO_SEED_ON_STARTUP=true
+      - ENABLE_HYBRID_SEARCH=${ENABLE_HYBRID_SEARCH:-false}
+      - LLM_PROVIDER=${LLM_PROVIDER:-mock}
+      - LLM_API_KEY=${LLM_API_KEY:-}
+      - LLM_MODEL_NAME=${LLM_MODEL_NAME:-gemini-1.5-flash}
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./data/policies:/app/data/policies:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+volumes:
+  chroma_data:
+    driver: local
