@@ -63,9 +63,9 @@ Outputs:
 
 ---
 
-## 3. Real LLM Mode for Live Demo & Video Recording
+## 3. Real LLM Mode
 
-The case study requires a **real LLM** (free Gemini or Groq tier) for the live screen recording demo, while keeping tests on a deterministic mock client:
+The case study requires a **real LLM** (free Gemini or Groq tier), while keeping tests on a deterministic mock client:
 
 ### Option A: Google Gemini (Free Tier)
 1. Get a free API key at [Google AI Studio](https://aistudio.google.com/).
